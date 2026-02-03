@@ -1,13 +1,14 @@
 server:
   port: 8080
 
+spring:
   application:
-    name: cloud-native-rest-ap
+    name: cloud-native-rest-api
   datasource:
-    url: jdbc:postgresql://localhost:5432/root
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/cloudNativeRestApi
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 1234
+    password: root
 #  sql:
 #    init:
 #      mode: always
@@ -23,6 +24,7 @@ server:
       hibernate:
         format_sql: true #pretty format
         highlight_sql : true #colored
+    database-platform: org.hibernate.dialect.MySQLDialect
   data:
 #    mongodb:
 #      database: cyberops
