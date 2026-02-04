@@ -30,3 +30,11 @@ Spring Cloud Native로 이어지는 시스템 구축을 위해 단계적으로 �
   - 서버 오류가 아닌 존재하지 않은 데이터를 요청한 Client의 잘못으로 위임
   - 특정 Exception을 Customized하여 throw(ExceptionResponse)
   - 특정 상황에 대해 의도한 Exception throw 시 상태코드 및 상태메시지 등을 generic하게 가공(ExcetionResponse/ControllerAdvice)
+- 엔드포인트 요청을 통해 외부로 보여지는 데이터 중 일부를 의도적으로 숨김처리 하고자 할 경우
+  - JsonIgnore, JsonIgnoreProperties
+
+> Validations
+- 백엔드에서의 데이터 유효성 체크를 진행할 수 있다.
+  - @Valid + Domain 객체의 @Size, @Past 등을 같이 활용하는 방안.
+- ResponseEntityExceptionHandler을 상속한 ExceptionHandler의 활용.
+

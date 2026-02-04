@@ -3,6 +3,7 @@ package com.restapi.user.controller;
 import com.restapi.user.domain.User;
 import com.restapi.user.exception.UserNotFoundedException;
 import com.restapi.user.service.UserService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -37,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user){
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user){
         User savedUser = userService.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()

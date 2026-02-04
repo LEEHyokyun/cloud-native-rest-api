@@ -1,6 +1,7 @@
 package com.restapi.user.service;
 
 import com.restapi.user.domain.User;
+import com.restapi.user.exception.UserDuplicatedException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,9 +16,9 @@ public class UserService {
     private static int usersCount = 3;
 
     static {
-        users.add(new User(1, "Jone", new Date()));
-        users.add(new User(2, "Kris", new Date()));
-        users.add(new User(3, "Peter", new Date()));
+        users.add(new User(1, "Jone", new Date(), "1111-1111"));
+        users.add(new User(2, "Kris", new Date(), "2222-2222"));
+        users.add(new User(3, "Peter", new Date(), "3333-3333"));
     }
 
     public List<User> findAll() {
@@ -38,9 +39,9 @@ public class UserService {
 
         if(user.getUserId() == null){
             users.add(user);
+        }else{
+            throw new UserDuplicatedException(String.format("User with id[%s] already exists", user.getUserId()));
         }
-
-        System.out.println(user.getUserId() + "에 해당하는 사용자는 이미 존재합니다.");
 
         return user;
     }
