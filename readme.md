@@ -3,6 +3,20 @@
 - Spring Boot 3.3.2 ver
 - Java 21 ver
 
+# REST API 프로젝트 관리 방안
+
+본 프로젝트는 Open API 구성이 목적이 아니기에, 내부 비즈니스 처리에 집중하여 관리한다.
+
+다만 참고적으로 Open API 이해를 위해 아래 내용을 별도로 기술하도록 함.
+
+> 버전 관리
+
+[엔드 포인트 관리]</br>
+- URI 기반 엔드 포인트 및 객체 버전 관리
+  - /v1/users/{id}
+  - SimpleBeanPropertyFilter의 활용
+- param 혹은 header 기반의 엔드 포인트 버전 관리
+
 ## 1.  개요
 
 > Cloud Natvie

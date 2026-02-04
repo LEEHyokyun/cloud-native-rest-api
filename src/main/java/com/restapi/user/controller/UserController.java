@@ -26,8 +26,19 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/v1/users/{id}")
     public User getUser(@PathVariable Integer id){
+        User user = userService.findOne(id);
+
+        if(user == null){
+            throw new UserNotFoundedException(String.format("ID[%s] is nout found", id));
+        }
+
+        return user;
+    }
+
+    @GetMapping("/v2/users/{id}")
+    public User getUserV2(@PathVariable Integer id){
         User user = userService.findOne(id);
 
         if(user == null){
