@@ -17,6 +17,9 @@
   - SimpleBeanPropertyFilter의 활용
 - param 혹은 header 기반의 엔드 포인트 버전 관리
 
+[Swagger 기반의 엔드 포인트 관리]</br>
+http://localhost:8080/swagger-ui/ 기반의 API 버전 관리
+
 ## 1.  개요
 
 > Cloud Natvie
@@ -51,4 +54,5 @@ Spring Cloud Native로 이어지는 시스템 구축을 위해 단계적으로 �
 - 백엔드에서의 데이터 유효성 체크를 진행할 수 있다.
   - @Valid + Domain 객체의 @Size, @Past 등을 같이 활용하는 방안.
 - ResponseEntityExceptionHandler을 상속한 ExceptionHandler의 활용.
+
 

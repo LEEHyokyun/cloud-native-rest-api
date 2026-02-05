@@ -35,3 +35,9 @@ spring:
 logging:
   level:
     org.springframework.batch.item.database: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
